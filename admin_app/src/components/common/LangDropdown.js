@@ -31,7 +31,7 @@ const LangDropdown = (props) => {
 
 const mapStateToProps = state => {
 
-    let translationsType = state.settings.settings['translations_type'] && state.settings.settings['translations_type'].value || 2
+    let translationsType = 1; //state.settings.settings['translations_type'] && state.settings.settings['translations_type'].value || 2
 
     return {
         translationsType: translationsType

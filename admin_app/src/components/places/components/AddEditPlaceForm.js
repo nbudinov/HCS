@@ -87,45 +87,45 @@ class AddEditPlaceForm extends Component {
 
                         <div className="col-md-6 col-sm-12">
                             <div className="form-group">
-                                <label htmlFor="name">{props.translations.invoices.name}</label>
+                                <label htmlFor="name">{props.translations.common.name}</label>
                                 <input className={`form-control`} id="name" type="text" placeholder={props.translations.common.name} name="name" onChange={props.onChange} value={props.place.name} />
                             </div>
                         </div>
                         <div className="col-md-6 col-sm-12">
                             <div className="form-group">
-                                <label htmlFor="short_name">{props.translations.invoices.short_name}</label>
+                                <label htmlFor="short_name">{props.translations.places.short_name}</label>
                                 <input className={`form-control`} id="short_name" type="text" placeholder={props.translations.common.short_name} name="short_name" onChange={props.onChange} value={props.place.short_name} />
                             </div>
                         </div>
 
                         <div className="col-md-6 col-sm-12">
                             <div className="form-group">
-                                <label htmlFor="company_name">{props.translations.invoices.company_name}</label>
+                                <label htmlFor="company_name">{props.translations.places.company_name || ""}</label>
                                 <input className={`form-control`} type="text" placeholder={props.translations.places.company_name} name="company_name" onChange={props.onChange} value={props.place.company_name} />
                             </div>
                         </div>
                         <div className="col-md-6 col-sm-12">
                             <div className="form-group">
-                                <label htmlFor="company_name">{props.translations.invoices.company_eik}</label>
+                                <label htmlFor="company_name">{props.translations.places.company_eik || ""}</label>
                                 <input className={`form-control`} type="text" placeholder={props.translations.places.company_eik} name="company_eik" onChange={props.onChange} value={props.place.company_eik} />
                             </div>
                         </div>
 
                         <div className="col-md-6 col-sm-12">
                             <div className="form-group">
-                                <label htmlFor="company_city">{props.translations.invoices.company_city}</label>
+                                <label htmlFor="company_city">{props.translations.places.company_city || ""}</label>
                                 <input className={`form-control`} type="text" name="company_city" onChange={props.onChange} value={props.place.company_city} />
                             </div>
                         </div>
                         <div className="col-md-6 col-sm-12">
                             <div className="form-group">
-                                <label htmlFor="company_address">{props.translations.invoices.company_address}</label>
+                                <label htmlFor="company_address">{props.translations.places.company_address || ""}</label>
                                 <input className={`form-control`} type="text" name="company_address" onChange={props.onChange} value={props.place.company_address} />
                             </div>
                         </div>
                         <div className="col-md-6 col-sm-12">
                             <div className="form-group">
-                                <label htmlFor="company_person">{props.translations.invoices.company_person}</label>
+                                <label htmlFor="company_person">{props.translations.places.company_person}</label>
                                 <input className={`form-control`} type="text" name="company_person" onChange={props.onChange} value={props.place.company_person} />
                             </div>
                         </div>
@@ -137,14 +137,14 @@ class AddEditPlaceForm extends Component {
                         </div>
                         <div className="col-md-6 col-sm-12">
                             <div className="form-group">
-                                <label htmlFor="monthly_fee">{props.translations.invoices.price}</label>
+                                <label htmlFor="monthly_fee">{props.translations.places.price}</label>
                                 <input className={`form-control`} type="text" name="monthly_fee" onChange={props.onChange} value={props.place.monthly_fee} />
                             </div>
                         </div>
 
                         <div className="col-lg-3 col-md-3 col-sm-12">
                             <div className="form-group">
-                                <label htmlFor="company_vat_registered">{props.translations.invoices.company_vat_registered}</label>
+                                <label htmlFor="company_vat_registered">{props.translations.places.company_vat_registered}</label>
 
                                 <label className="switch switch-label switch-pill switch-outline-primary-alt">
                                     <input className="switch-input" type="checkbox" name="company_vat_registered" onChange={props.onChangeCheckbox} checked={props.place.company_vat_registered} />
@@ -217,22 +217,15 @@ class AddEditPlaceForm extends Component {
                             />
                         </div>
 
-                        <div className="form-group col-sm-12">
+                        {/* <div className="form-group col-sm-12">
                             <label className="col-md-1 col-form-label vertical-center" htmlFor="file-multiple-input">{props.translations.common.image}</label>
                             <div className="col-md-5 col-form-label vertical-center" style={{ justifyContent: 'center' }}>
-                                {/* <input id="file-multiple-input" type="file" name="file-multiple-inpuproductisLiquidt" multiple=""/> */}
                                 <input type='file' name='file' id='placeImg' multiple ref="image" style={{ display: 'none' }} onChange={this.addUploadedFileText} />
                                 <label for="placeImg" type="button" className="btn btn-secondary" style={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0, margin: 0 }}>{!props.isAdding && props.place.image && props.place.image.length > 0 ? props.translations.products.replace_image : props.translations.products.upload_image}</label>
                                 {editImage}
                                 {this.state.uploadedImgName}
-
-                                {/* {!props.isAdding && props.productImage && props.productImage.length > 0 ?
-                                    <button type="button" className="btn btn-danger" onClick={props.removeImage} style={{ borderTopRightRadius: 0, borderTopLeftRadius: 0 }}>{props.translations.products.delete_image}</button>
-                                    :
-                                    null
-                                } */}
                             </div>
-                        </div>
+                        </div> */}
 
                     </div>
 

@@ -30,7 +30,7 @@ module.exports = function (app, db, passport) {
   // най-отгоре за да може да взима на дев енв клиента+Places без да хваща забраните по-долу
   app.get("/api/clients/:slug", clientsController.getAll);
 
-  app.get("/api/clientsAdmin", requireAuth, Auth.roleAuth('PDF_MENU_ADMIN'), clientsController.getAllClientsAdmin);
+  app.get("/api/clientsAdmin", requireAuth, Auth.roleAuth('SUPER_ADMIN'), clientsController.getAllClientsAdmin);
 
   // app.get('/api/epay/test', epayController.test);
 

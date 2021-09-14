@@ -45,10 +45,6 @@ class EditPlacePage extends Component {
 
 	componentWillMount() {
 		this.props.listClients();
-		this.props.listOrderTypes();
-		this.props.getCities();
-		this.props.getTags();
-		// this.props.listPlacesByUserRole();
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -120,9 +116,9 @@ class EditPlacePage extends Component {
 			errors.push(this.props.translations.messages.errors.invalid_name);
 		}
 
-		if (!this.state.cityId) {
-			errors.push(this.props.translations.messages.errors.invalid_city);
-		}
+		// if (!this.state.cityId) {
+		// 	errors.push(this.props.translations.messages.errors.invalid_city);
+		// }
 
 		return errors;
 	}
@@ -294,14 +290,14 @@ const mapStateToProps = (state, ownProps) => {
 	return {
 		clients: state.clients.clients || [],
 		item: item,
-		errors: state.alergens.errors,
+		errors: [], //state.alergens.errors,
 		translations: state.lang,
-		languages: state.languages.languages || {},
-		cities: state.places.cities || [],
+		languages: [], //state.languages.languages || {},
+		cities: [], //state.places.cities || [],
 		tags: [], //state.tags.tags || [],
 
 		currLang: "bg",
 	}
 };
 
-export default connect(mapStateToProps, { addEditPlace, listPlacesByUserRole, listClients, addErrorMessages, addSuccessMessage, listOrderTypes, getCities})(EditPlacePage);
+export default connect(mapStateToProps, { addEditPlace, listPlacesByUserRole, listClients, addErrorMessages, addSuccessMessage})(EditPlacePage);
